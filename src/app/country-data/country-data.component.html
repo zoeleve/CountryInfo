@@ -1,0 +1,33 @@
+<div class="filter-area">
+    <select [(ngModel)]="selectedRegion">
+      <option value="">All Regions</option>
+      <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+    </select>
+    <input type="date" [(ngModel)]="fromDate" placeholder="From">
+    <input type="date" [(ngModel)]="toDate" placeholder="To">
+    <button (click)="applyFilters()">Apply Filters</button>
+  </div>
+  
+  <table class="country-table">
+    <thead>
+      <tr>
+        <th>Continent</th>
+        <th>Region</th>
+        <th>Country</th>
+        <th>Year</th>
+        <th>Population</th>
+        <th>GDP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countriesData">
+        <td>{{ country.continent }}</td>
+        <td>{{ country.region }}</td>
+        <td>{{ country.country }}</td>
+        <td>{{ country.year }}</td>
+        <td>{{ country.population }}</td>
+        <td>{{ country.gdp }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

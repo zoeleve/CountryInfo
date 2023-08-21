@@ -1,0 +1,27 @@
+<h1>Country List</h1>
+<ol>
+  <li *ngFor="let country of countries">
+    <a [routerLink]="['/languages', country.countryCode2]">{{ country.name }}</a>
+  </li>
+</ol>
+<table class="country-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Country Code3</th>
+        <th>Year</th>
+        <th>Population</th>
+        <th>GDP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries">
+        <td>{{ country.name }}</td>
+        <td>{{ country.country_code3 }}</td>
+        <td>{{ country.year }}</td>
+        <td>{{ country.population }}</td>
+        <td>{{ country.gdp }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
